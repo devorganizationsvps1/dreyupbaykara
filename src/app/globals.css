@@ -189,3 +189,52 @@ html {
     font-size: 16px;
   }
 }
+
+/*
+ * Ana sayfa mobil hero: kart solup yukarı kayarken omurga belirir.
+ * Destekleyen tarayıcılarda (Chrome 115+, Safari 26+) animasyon kaydırmaya
+ * bağlı CSS ile compositor'da çalışır; ana iş parçacığı meşgul olsa da
+ * kaydırmanın gerisinde kalmaz. CSS animasyonu satır içi stili ezdiği için
+ * framer-motion değerleri yalnızca desteklemeyen tarayıcılarda görünür.
+ * Aralıklar Home.tsx'teki kaydırma oranlarıyla aynı olmalı
+ * (`contain` 0–100% = bölümün kaydırılabilir boyu).
+ */
+@supports (animation-timeline: view()) {
+  @media (max-width: 1023px) {
+    .home-hero-timeline {
+      view-timeline: --home-hero block;
+    }
+
+    .home-hero-card {
+      animation: home-hero-card-out linear both;
+      animation-timeline: --home-hero;
+      animation-range: contain 0% contain 35%;
+    }
+
+    .home-hero-spine {
+      animation: home-hero-spine-in linear both;
+      animation-timeline: --home-hero;
+      animation-range: contain 14% contain 38%;
+    }
+  }
+}
+
+@keyframes home-hero-card-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+}
+
+@keyframes home-hero-spine-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

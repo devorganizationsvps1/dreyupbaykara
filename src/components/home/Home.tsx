@@ -162,16 +162,21 @@ export default function Home({
         ref={wrapperRef}
         // Mobilde `svh`: adres çubuğu kaydırırken gizlenince `dvh` değişir,
         // bölüm boyu oynar ve kaydırma oranı sıçrar.
-        className="relative h-[280svh] bg-bg lg:h-[280vh]"
+        className="home-hero-timeline relative h-[280svh] bg-bg lg:h-[280vh]"
         aria-label="Ana sayfa bölümü"
       >
-        <div className="sticky top-0 h-dvh w-full overflow-hidden bg-bg">
+        {/*
+          Mobilde sabit alan da `svh`: `dvh` adres çubuğu gizlenirken her karede
+          değişiyor, kartlar yeniden diziliyor ve 3B tuval yeniden boyutlanıyordu
+          (kaydırırken takılma). Altta açılan ince şerit zaten aynı renkte.
+        */}
+        <div className="sticky top-0 h-svh w-full overflow-hidden bg-bg lg:h-dvh">
           <div className="absolute inset-0 z-[1] bg-bg">
             <div
               className="pointer-events-none absolute inset-0"
               aria-hidden="true"
             >
-              <div className="absolute left-1/4 top-1/4 h-[55dvh] w-[55dvh] rounded-full bg-accent/15 blur-[120px]" />
+              <div className="absolute left-1/4 top-1/4 h-[55svh] w-[55svh] lg:h-[55dvh] lg:w-[55dvh] rounded-full bg-accent/15 blur-[120px]" />
               <div className="absolute bottom-0 left-0 h-1/3 w-full bg-gradient-to-t from-bg to-transparent" />
             </div>
           </div>
@@ -187,7 +192,8 @@ export default function Home({
           <motion.div
             suppressHydrationWarning
             style={{ opacity: mobileSpineOpacity }}
-            className="pointer-events-none absolute inset-0 z-[8] lg:opacity-100!"
+            // `home-hero-spine`: mobilde solmayı CSS kaydırma animasyonu yapar (globals.css).
+            className="home-hero-spine pointer-events-none absolute inset-0 z-[8] lg:opacity-100!"
           >
             {showScene ? (
               <div className="absolute inset-0">
@@ -239,7 +245,10 @@ export default function Home({
               y: textY,
               visibility: textVisibility,
             }}
-            className="pointer-events-none absolute inset-0 z-10 flex flex-col px-3 pb-3 pt-[6.75rem] lg:hidden"
+            // Kendi katmanında: solma/kayma her karede yeniden boyama yapmasın.
+            // `home-hero-card`: destekleyen tarayıcıda solma/kaymayı CSS kaydırma
+            // animasyonu yapar (globals.css); framer değerleri yedek.
+            className="home-hero-card pointer-events-none absolute inset-0 z-10 flex flex-col px-3 pb-3 pt-[6.75rem] will-change-[transform,opacity] lg:hidden"
           >
             <div className="flex min-h-0 flex-1 flex-col gap-2.5 rounded-[1.5rem] bg-[#fdfaf5] p-3 shadow-[0_14px_36px_rgba(15,23,42,0.08)]">
               <HomeDoctorCard hero={sections.hero} mobile />
