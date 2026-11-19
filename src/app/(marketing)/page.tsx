@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import HomePage from "@/components/home/Home";
-import { SPINE_GLB } from "@/components/home/spine-asset";
+import { SPINE_GLB, SPINE_POSTER } from "@/components/home/spine-asset";
 import { PAGE_SEO, SITE_KEYWORDS } from "@/data/seo";
 import { getPublishedPage, mediaPublicUrl } from "@/lib/cms/content";
 import { getHomeSections } from "@/lib/cms/home-server";
@@ -134,6 +134,14 @@ export default async function Home() {
         href={SPINE_GLB}
         as="fetch"
         crossOrigin="anonymous"
+        media="(min-width: 1024px)"
+      />
+      <link
+        rel="preload"
+        href={SPINE_POSTER}
+        as="image"
+        type="image/webp"
+        fetchPriority="high"
         media="(min-width: 1024px)"
       />
       <HomePage sections={sections} />

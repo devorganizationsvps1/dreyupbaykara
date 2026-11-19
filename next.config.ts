@@ -79,6 +79,10 @@ const nextConfig: NextConfig = {
         source: "/hero/spine-hernia.glb",
         headers: [{ key: "Cache-Control", value: IMMUTABLE }],
       },
+      {
+        source: "/hero/spine-poster.webp",
+        headers: [{ key: "Cache-Control", value: IMMUTABLE }],
+      },
     ];
   },
   async redirects() {

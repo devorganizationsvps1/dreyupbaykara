@@ -63,10 +63,22 @@ function WaitForMeshopt({ children }: { children: ReactNode }) {
   return children;
 }
 
+/**
+ * Model yüklendikten sonra birkaç kare bekler: ilk karede shader derlemesi ana
+ * iş parçacığını kilitleyebiliyor. Hemen haber verseydik poster, tuval daha boşken
+ * solmaya başlardı.
+ */
 function ModelReady({ onReady }: { onReady: () => void }) {
+  const frames = useRef(0);
+  const onReadyRef = useRef(onReady);
   useEffect(() => {
-    onReady();
-  }, [onReady]);
+    onReadyRef.current = onReady;
+  });
+  useFrame(() => {
+    if (frames.current > 2) return;
+    frames.current += 1;
+    if (frames.current === 3) onReadyRef.current();
+  });
   return null;
 }
 
@@ -165,8 +177,11 @@ function Rig({
 
 export default function SpineScene({
   progressRef,
+  onReady,
 }: {
   progressRef: React.MutableRefObject<number>;
+  /** Model ilk kez çizilebilir olduğunda bir kez çağrılır. */
+  onReady?: () => void;
 }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const herniaWorldPosRef = useRef(new Vector3());
@@ -178,7 +193,9 @@ export default function SpineScene({
   return (
     <div
       ref={wrapRef}
-      className={`relative isolate h-full w-full select-none transition-opacity duration-500 ease-out ${
+      // Geçiş yok: görünürlüğü üstteki poster yumuşatıyor. Burada da solma
+      // olsaydı ikisi yarı saydamken model bir an silikleşirdi.
+      className={`relative isolate h-full w-full select-none ${
         visible ? "opacity-100" : "opacity-0"
       }`}
       aria-label="3D omurga modeli"
@@ -193,7 +210,9 @@ export default function SpineScene({
             near: 0.05,
             far: 100,
           }}
-          dpr={lowPower ? 1 : [1, 1.5]}
+          // Mobilde 1x tuval telefon ekranında bulanık kalıyor; kenar yumuşatma
+          // kapalı olduğu için 2x'e kadar çıkmak karşılanabilir.
+          dpr={lowPower ? [1, 2] : [1, 1.5]}
           frameloop={active ? "always" : "demand"}
           resize={{ scroll: false, debounce: 0 }}
           onCreated={({ gl }) => {
@@ -232,7 +251,12 @@ export default function SpineScene({
                 herniaWorldPosRef={herniaWorldPosRef}
                 herniaReadyRef={herniaReadyRef}
               />
-              <ModelReady onReady={() => setVisible(true)} />
+              <ModelReady
+                onReady={() => {
+                  setVisible(true);
+                  onReady?.();
+                }}
+              />
             </WaitForMeshopt>
           </Suspense>
           <Rig
