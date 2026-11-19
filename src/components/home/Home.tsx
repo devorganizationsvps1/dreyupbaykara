@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { motion, useTransform } from "framer-motion";
+import { motion, useTransform, type MotionValue } from "framer-motion";
 import { HomeDoctorCard } from "./HomeDoctorCard";
 import { HomeTreatmentCards } from "./HomeTreatmentCards";
 import { useHomeProgress } from "./useHomeProgress";
@@ -31,6 +31,39 @@ function mapSceneProgress(raw: number, start: number): number {
   return Math.min(1, (raw - start) / (1 - start));
 }
 
+/**
+ * Mobilde omurga katmanı tamamen saydamken sahne kare çizmesin. Bu durum
+ * kaydırmayla değiştiği için burada, ayrı bir bileşende tutuluyor: Home'da
+ * tutulsaydı her geçişte bütün sayfa yeniden render olur, kaydırma takılırdı.
+ */
+function HeroSpineScene({
+  progressRef,
+  scrollYProgress,
+  pauseWhenHidden,
+  onReady,
+}: {
+  progressRef: React.MutableRefObject<number>;
+  scrollYProgress: MotionValue<number>;
+  pauseWhenHidden: boolean;
+  onReady: () => void;
+}) {
+  const [hidden, setHidden] = useState(
+    () => scrollYProgress.get() < MOBILE_SPINE_FADE[0] - 0.04,
+  );
+  useEffect(() => {
+    const sync = (v: number) => setHidden(v < MOBILE_SPINE_FADE[0] - 0.04);
+    sync(scrollYProgress.get());
+    return scrollYProgress.on("change", sync);
+  }, [scrollYProgress]);
+  return (
+    <SpineScene
+      progressRef={progressRef}
+      onReady={onReady}
+      paused={pauseWhenHidden && hidden}
+    />
+  );
+}
+
 export default function Home({
   sections = HOME_FALLBACK,
 }: {
@@ -39,7 +72,7 @@ export default function Home({
   const wrapperRef = useRef<HTMLElement>(null);
   const [isDesktop, setIsDesktop] = useState(false);
   const [sceneReady, setSceneReady] = useState(false);
-  /** Mobilde 3B sahne ilk kaydırmaya kadar indirilmez; o ana kadar poster yeter. */
+  /** Mobilde 3B sahne sayfa yüklendikten sonra boşta (ya da ilk kaydırmada) kurulur; o ana kadar poster yeter. */
   const [mobileScrolled, setMobileScrolled] = useState(false);
   const { progressRef, scrollYProgress } = useHomeProgress(wrapperRef);
   const sceneProgressRef = useRef(0);
@@ -62,11 +95,34 @@ export default function Home({
 
   const flashOpacity = useTransform(scrollYProgress, [0.82, 1], [0, 1]);
 
+  // Sahneyi kaydırma sırasında kurmak (three.js, GLB çözme, shader derleme)
+  // ana thread'i kilitleyip geçişi takılttırıyordu. Bu yüzden sayfa yüklenip
+  // boşta kalınca, kullanıcı henüz kaydırmıyorken kuruyoruz; daha erken
+  // kaydırırsa hemen başlıyor.
   useEffect(() => {
     if (mobileScrolled) return;
-    return scrollYProgress.on("change", (v) => {
-      if (v > 0.005) setMobileScrolled(true);
+    let idleId = 0;
+    let timer = 0;
+    const start = () => setMobileScrolled(true);
+    const scheduleIdle = () => {
+      if (typeof window.requestIdleCallback === "function") {
+        idleId = window.requestIdleCallback(start, { timeout: 2500 });
+      } else {
+        // Safari'de requestIdleCallback yok.
+        timer = window.setTimeout(start, 1200);
+      }
+    };
+    if (document.readyState === "complete") scheduleIdle();
+    else window.addEventListener("load", scheduleIdle, { once: true });
+    const unsub = scrollYProgress.on("change", (v) => {
+      if (v > 0.005) start();
     });
+    return () => {
+      unsub();
+      window.removeEventListener("load", scheduleIdle);
+      if (idleId) window.cancelIdleCallback(idleId);
+      if (timer) window.clearTimeout(timer);
+    };
   }, [mobileScrolled, scrollYProgress]);
 
   useLayoutEffect(() => {
@@ -135,8 +191,10 @@ export default function Home({
           >
             {showScene ? (
               <div className="absolute inset-0">
-                <SpineScene
+                <HeroSpineScene
                   progressRef={sceneProgressRef}
+                  scrollYProgress={scrollYProgress}
+                  pauseWhenHidden={!isDesktop}
                   onReady={() => setSceneReady(true)}
                 />
               </div>

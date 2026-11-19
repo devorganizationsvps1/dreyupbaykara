@@ -178,10 +178,13 @@ function Rig({
 export default function SpineScene({
   progressRef,
   onReady,
+  paused = false,
 }: {
   progressRef: React.MutableRefObject<number>;
   /** Model ilk kez çizilebilir olduğunda bir kez çağrılır. */
   onReady?: () => void;
+  /** Sahne hazır olduktan sonra kare çizimini durdurur (ör. katman görünmezken). */
+  paused?: boolean;
 }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const herniaWorldPosRef = useRef(new Vector3());
@@ -213,7 +216,8 @@ export default function SpineScene({
           // Mobilde 1x tuval telefon ekranında bulanık kalıyor; kenar yumuşatma
           // kapalı olduğu için 2x'e kadar çıkmak karşılanabilir.
           dpr={lowPower ? [1, 2] : [1, 1.5]}
-          frameloop={active ? "always" : "demand"}
+          // Hazır olana kadar duraklatmıyoruz: ModelReady'nin birkaç kareye ihtiyacı var.
+          frameloop={active && !(paused && visible) ? "always" : "demand"}
           resize={{ scroll: false, debounce: 0 }}
           onCreated={({ gl }) => {
             gl.setClearColor(0x000000, 0);
