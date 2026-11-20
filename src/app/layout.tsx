@@ -37,13 +37,16 @@ export const metadata: Metadata = {
   publisher: "Op. Dr. Eyüp Baykara",
   category: "health",
   keywords: [
-    "endoskopik bel ameliyatı",
-    "full endoskopik bel fıtığı ameliyatı",
+    "Op. Dr. Eyüp Baykara",
+    "Eyüp Baykara",
+    "Op. Dr. Eyüp Baykara yorumları",
+    "dr eyüp baykara yorumlar",
+    "dr eyüp baykara ameliyat ücreti",
     "kapalı bel fıtığı ameliyatı",
+    "endoskopik bel ameliyatı",
     "bel fıtığı ameliyatı",
     "boyun fıtığı ameliyatı",
     "kanal darlığı ameliyatı",
-    "Op. Dr. Eyüp Baykara",
   ],
   robots: {
     index: true,
@@ -60,7 +63,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "tr_TR",
     url: "https://endoskopikbelameliyati.com",
-    siteName: "Op. Dr. Eyüp Baykara | Endoskopik Bel Ameliyatı",
+    siteName: "Op. Dr. Eyüp Baykara | Kapalı Bel Fıtığı Ameliyatı",
     title: PAGE_SEO.home.title,
     description: PAGE_SEO.home.description,
     images: [

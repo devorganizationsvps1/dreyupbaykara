@@ -229,10 +229,9 @@ export const treatments: Treatment[] = [
         a: "Nükleoplasti, erken evre fıtıklarda diskin hacmini ısı enerjisiyle azaltmayı hedefler. Full endoskopik ameliyatta ise sinire baskı yapan fıtıklaşmış doku kamera rehberliğinde doğrudan çıkarılır; ameliyat düzeyindeki hastalarda kalıcı çözüm için tercih edilir.",
       },
     ],
-    metaTitle:
-      "Kapalı Bel Fıtığı Ameliyatı | Endoskopik Bel Ameliyatı | Op. Dr. Eyüp Baykara",
+    metaTitle: "Kapalı Bel Fıtığı Ameliyatı | Op. Dr. Eyüp Baykara",
     metaDescription:
-      "Kapalı bel fıtığı ameliyatı ve endoskopik bel ameliyatı: küçük kesi, az doku hasarı ve hızlı iyileşme. Sırt ağrısı, bacak uyuşması ve güç kaybına minimal invaziv çözüm.",
+      "Kapalı bel fıtığı ameliyatı: endoskopik yöntemle küçük kesi, az ağrı, aynı gün taburcu. Op. Dr. Eyüp Baykara — Silivri / İstanbul. Randevu ve ücret bilgisi için yazın.",
     bodyLocation: "Bel omurgası",
   },
   {

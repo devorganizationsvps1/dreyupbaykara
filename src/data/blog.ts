@@ -206,12 +206,13 @@ export const blogPosts: BlogPost[] = [
     title: "Op. Dr. Eyüp Baykara Yorumları",
     date: "2026-11-13",
     excerpt:
-      "Op. Dr. Eyüp Baykara yorumları ve hasta deneyimleri: full endoskopik bel fıtığı ameliyatı sonrası gerçek hikâyeler ve Google yorumlarına nasıl ulaşılır.",
+      "Op. Dr. Eyüp Baykara yorumları, Dr. Eyüp Baykara yorumlar ve Eyüp Baykara hasta deneyimleri — video ve Google değerlendirmeleri.",
     image: "/hero/hero_dr.webp",
-    imageAlt: "Op. Dr. Eyüp Baykara yorumları",
-    metaTitle: "Op. Dr. Eyüp Baykara Yorumları | Hasta Deneyimleri",
+    imageAlt: "Op. Dr. Eyüp Baykara yorumları — Dr. Eyüp Baykara yorumlar",
+    metaTitle:
+      "Op. Dr. Eyüp Baykara Yorumları | Dr. Eyüp Baykara Yorumlar",
     metaDescription:
-      "Op. Dr. Eyüp Baykara yorumları, Dr. Eyüp Baykara yorumlar ve hasta videoları. Endoskopik bel ameliyatı deneyimleri için hasta hikâyelerine göz atın.",
+      "Op. Dr. Eyüp Baykara yorumları ve Dr. Eyüp Baykara yorumlar. Eyüp Baykara hasta videoları, Google yorumları; kapalı bel fıtığı ameliyatı deneyimleri.",
     showLeadForm: true,
     showWhatsAppCta: true,
     showContactCard: true,
@@ -256,12 +257,12 @@ export const blogPosts: BlogPost[] = [
     title: "Dr. Eyüp Baykara Ameliyat Ücreti",
     date: "2026-11-13",
     excerpt:
-      "Dr. Eyüp Baykara ameliyat ücreti nasıl belirlenir? Bel fıtığı, boyun fıtığı ve kanal darlığı endoskopik cerrahisinde fiyatı etkileyen faktörler.",
+      "Dr. Eyüp Baykara ameliyat ücreti nasıl belirlenir? Kapalı bel fıtığı ameliyatı fiyatını etkileyen faktörler ve teklif alma yolu.",
     image: "/hero/hero_dr.webp",
     imageAlt: "Dr. Eyüp Baykara ameliyat ücreti",
-    metaTitle: "Dr. Eyüp Baykara Ameliyat Ücreti | Op. Dr. Eyüp Baykara",
+    metaTitle: "Dr. Eyüp Baykara Ameliyat Ücreti | Kapalı Bel Fıtığı",
     metaDescription:
-      "Dr. Eyüp Baykara ameliyat ücreti: endoskopik bel fıtığı, boyun fıtığı ve kanal darlığı ameliyatında ücreti etkileyen unsurlar. Güncel bilgi için iletişime geçin.",
+      "Dr. Eyüp Baykara ameliyat ücreti: kapalı bel fıtığı, boyun fıtığı ve kanal darlığı. Ücreti etkileyen unsurlar + WhatsApp ile güncel teklif.",
     showLeadForm: true,
     showWhatsAppCta: true,
     showContactCard: true,
@@ -312,12 +313,12 @@ export const blogPosts: BlogPost[] = [
     title: "Op. Dr. Eyüp Baykara Kimdir?",
     date: "2026-10-22",
     excerpt:
-      "Op. Dr. Eyüp Baykara kimdir? İstanbul doğumlu beyin ve sinir cerrahisi uzmanının eğitimi, uzmanlık alanı ve full endoskopik omurga cerrahisindeki yaklaşımı.",
+      "Eyüp Baykara kimdir? Op. Dr. Eyüp Baykara — eğitim, uzmanlık ve kapalı bel fıtığı ameliyatı yaklaşımı.",
     image: "/hero/hero_dr.webp",
-    imageAlt: "Op. Dr. Eyüp Baykara kimdir — beyin ve sinir cerrahisi uzmanı",
-    metaTitle: "Op. Dr. Eyüp Baykara Kimdir? | Beyin ve Sinir Cerrahisi",
+    imageAlt: "Op. Dr. Eyüp Baykara kimdir — Eyüp Baykara",
+    metaTitle: "Eyüp Baykara Kimdir? | Op. Dr. Eyüp Baykara",
     metaDescription:
-      "Op. Dr. Eyüp Baykara kimdir? Trakya ve Pamukkale eğitimi, full endoskopik bel-boyun fıtığı ve kanal darlığı cerrahisi. Resmi site: eyupbaykara.com",
+      "Eyüp Baykara kimdir? Op. Dr. Eyüp Baykara: Trakya–Pamukkale eğitimi, kapalı bel fıtığı ameliyatı, boyun fıtığı ve kanal darlığı. Silivri / İstanbul.",
     showLeadForm: true,
     showWhatsAppCta: true,
     showContactCard: true,
@@ -959,12 +960,13 @@ export const blogPosts: BlogPost[] = [
     title: "Bel Fıtığı İçin Hangi Bölüme Gidilmeli?",
     date: "2026-08-23",
     excerpt:
-      "Bel fıtığında asıl başvurulması gereken branşlar beyin cerrahisi ve fizik tedavidir. Doğru bölüm seçimi tanı ve tedaviyi hızlandırır.",
+      "Bel fıtığı için hangi bölüme gidilmeli? Beyin cerrahisi mi, fizik tedavi mi — doğru branş seçimi ve ne zaman Op. Dr. Eyüp Baykara’ya başvurmalısınız.",
     image: "/hero/belfitigi.webp",
     imageAlt: "Bel fıtığı için hangi bölüme gidilmeli",
-    metaTitle: "Bel Fıtığı İçin Hangi Bölüme Gidilmeli? | Op. Dr. Eyüp Baykara",
+    metaTitle:
+      "Bel Fıtığı İçin Hangi Bölüme Gidilmeli? Beyin Cerrahisi mi?",
     metaDescription:
-      "Bel fıtığı için hangi bölüme gidilmeli? Beyin cerrahisi ve fizik tedavi arasındaki farkı, bel ağrısında doğru branş seçimini öğrenin.",
+      "Bel fıtığı için hangi bölüme gidilmeli? Beyin cerrahisi ve fizik tedavi farkı, kırmızı bayraklar ve kapalı bel fıtığı ameliyatı ne zaman gerekir — net rehber.",
     showLeadForm: true,
     showWhatsAppCta: true,
     showContactCard: true,
@@ -1178,12 +1180,25 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "kapali-bel-fitigi-ameliyati",
-    title: "Tam Kapalı Bel Fıtığı Ameliyatı",
+    title: "Kapalı Bel Fıtığı Ameliyatı",
     date: "2025-07-16",
-    excerpt: "Bel fıtığı , ülkemizde milyonlarca insanı etkileyen, yaşam kalitesini ciddi şekilde düşüren bir omurga rahatsızlığıdır. Genellikle 30-50 yaş aralığında görülse de her yaşta ortaya çıkabilir. Ağrı çoğu zaman kalçaya, bacağa ve ayak…",
-    image: "https://endospineistanbul.com/wp-content/uploads/2025/07/eyup-hoca.png",
+    excerpt:
+      "Kapalı bel fıtığı ameliyatı nedir? Full endoskopik yöntemle küçük kesi, aynı gün taburcu ve hızlı iyileşme — Op. Dr. Eyüp Baykara.",
+    image: "/hero/belfitigi.webp",
+    imageAlt: "Kapalı bel fıtığı ameliyatı — Op. Dr. Eyüp Baykara",
     sourceUrl: "https://endospineistanbul.com/kapali-bel-fitigi-ameliyati/",
-    contentHtml: `<figure><img src="https://endospineistanbul.com/wp-content/uploads/2024/11/518385440_122159763788591397_8345120127939669089_n.jpg" alt="" loading="lazy" /></figure><figure><img src="https://endospineistanbul.com/wp-content/uploads/2024/11/518274118_122159744300591397_1963612239159204405_n.jpg" alt="" loading="lazy" /></figure><h2>Tam Kapalı Bel Fıtığı Ameliyatı</h2><p><strong>Bel fıtığı</strong>, ülkemizde milyonlarca insanı etkileyen, yaşam kalitesini ciddi şekilde düşüren bir omurga rahatsızlığıdır. Genellikle 30-50 yaş aralığında görülse de her yaşta ortaya çıkabilir. Ağrı çoğu zaman kalçaya, bacağa ve ayak parmaklarına yayılır. Uyuşma, karıncalanma ve yürüme zorluklarıyla birlikte görülür.</p><p>Bazı hastalarda bu ağrılar zamanla azalırken, bazı durumlarda ağrı kronikleşir ve dayanılmaz hale gelir. İşte bu noktada, modern cerrahinin sunduğu <strong>tam kapalı bel fıtığı ameliyatı</strong> devreye girer. Bu yöntem, klasik açık ameliyatların aksine, daha hızlı iyileşme süreci ve daha az risk sunar.</p><ul><li><img src="https://endospineistanbul.com/wp-content/uploads/2025/07/hs-check.svg" alt="" loading="lazy" />
+    metaTitle: "Kapalı Bel Fıtığı Ameliyatı | Op. Dr. Eyüp Baykara",
+    metaDescription:
+      "Kapalı bel fıtığı ameliyatı: milimetrik kesi, az ağrı, aynı gün taburcu. Full endoskopik yöntem ve Op. Dr. Eyüp Baykara ile bel fıtığı tedavisi.",
+    showLeadForm: true,
+    showWhatsAppCta: true,
+    showContactCard: true,
+    contactCardTitle: "Kapalı bel fıtığı ameliyatı için bilgi",
+    contactCardBody:
+      "Size uygun olup olmadığını öğrenmek için formu doldurun veya WhatsApp’tan yazın.",
+    contentHtml: `<p><strong>Kapalı bel fıtığı ameliyatı</strong>, bel fıtığında sinire baskı yapan diskin milimetrik kesiden endoskop ile çıkarılmasıdır. Halk arasında tam kapalı / full endoskopik bel fıtığı ameliyatı olarak da anılır.</p>
+<p>Tedavi sayfası: <a href="/tedaviler/bel-fitigi-ameliyati">kapalı bel fıtığı ameliyatı</a> · Güncel rehber: <a href="/blog/kapali-bel-fitigi-ameliyati-endoskopik">kapalı bel fıtığı ameliyatı (endoskopik)</a>.</p>
+<figure><img src="/hero/belfitigi.webp" alt="Kapalı bel fıtığı ameliyatı" loading="lazy" width="1000" height="667" /></figure><figure><img src="/hero/hero_dr.webp" alt="Op. Dr. Eyüp Baykara kapalı bel fıtığı ameliyatı" loading="lazy" width="1000" height="1250" /></figure><h2>Kapalı Bel Fıtığı Ameliyatı</h2><p><strong>Bel fıtığı</strong>, ülkemizde milyonlarca insanı etkileyen, yaşam kalitesini ciddi şekilde düşüren bir omurga rahatsızlığıdır. Genellikle 30-50 yaş aralığında görülse de her yaşta ortaya çıkabilir. Ağrı çoğu zaman kalçaya, bacağa ve ayak parmaklarına yayılır. Uyuşma, karıncalanma ve yürüme zorluklarıyla birlikte görülür.</p><p>Bazı hastalarda bu ağrılar zamanla azalırken, bazı durumlarda ağrı kronikleşir ve dayanılmaz hale gelir. İşte bu noktada, modern cerrahinin sunduğu <strong>tam kapalı bel fıtığı ameliyatı</strong> devreye girer. Bu yöntem, klasik açık ameliyatların aksine, daha hızlı iyileşme süreci ve daha az risk sunar.</p><ul><li><img src="https://endospineistanbul.com/wp-content/uploads/2025/07/hs-check.svg" alt="" loading="lazy" />
  Hızlı Taburcu, Hızlı Dönüş </li><li><img src="https://endospineistanbul.com/wp-content/uploads/2025/07/hs-check.svg" alt="" loading="lazy" />
  Minimal Kesikler </li></ul><ul><li><img src="https://endospineistanbul.com/wp-content/uploads/2025/07/hs-check.svg" alt="" loading="lazy" />
  Enfeksiyon Riski Düşük </li><li><img src="https://endospineistanbul.com/wp-content/uploads/2025/07/hs-check.svg" alt="" loading="lazy" />

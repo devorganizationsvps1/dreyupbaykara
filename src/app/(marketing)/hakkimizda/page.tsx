@@ -26,10 +26,8 @@ export default async function HakkimizdaPage() {
 
   return (
     <PageShell
-      title={content?.title || "Op. Dr. Eyüp Baykara"}
-      description={
-        content?.excerpt || PAGE_SEO.hakkimizda.snippet
-      }
+      title="Eyüp Baykara Kimdir? | Op. Dr. Eyüp Baykara"
+      description={PAGE_SEO.hakkimizda.snippet}
       image={image}
       imageAlt={content?.featured_image_alt || "Op. Dr. Eyüp Baykara"}
       breadcrumb={[

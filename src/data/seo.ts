@@ -4,49 +4,54 @@ export type PageSeo = {
   snippet: string;
 };
 
-/** Canonical marketing SEO: meta title, meta description, snippet (kısa açıklama). */
+/** Canonical marketing SEO: meta title, meta description, snippet (kısa açıklama).
+ * GSC 2026-11: yorumlar, kapalı bel fıtığı, ameliyat ücreti, marka aramalarına göre güncellendi.
+ */
 export const PAGE_SEO = {
   home: {
-    title: "Kapalı Bel Ameliyatı | Endoskopik Bel Ameliyatı | Op. Dr. Eyüp Baykara",
+    title:
+      "Op. Dr. Eyüp Baykara | Kapalı Bel Fıtığı Ameliyatı | Endoskopik Bel Ameliyatı",
     description:
-      "Kapalı bel ameliyatı ve endoskopik bel ameliyatı: bel fıtığı, boyun fıtığı ve kanal darlığında minimal invaziv cerrahi. Aynı gün taburcu — Op. Dr. Eyüp Baykara, Silivri / İstanbul.",
+      "Op. Dr. Eyüp Baykara — kapalı bel fıtığı ameliyatı ve endoskopik bel ameliyatı. Bel–boyun fıtığı, kanal darlığı. Aynı gün taburcu, Silivri / İstanbul.",
     snippet:
-      "Kapalı bel ameliyatı ve endoskopik bel ameliyatı ile bel fıtığı, boyun fıtığı ve kanal darlığında hızlı iyileşme.",
+      "Eyüp Baykara ile kapalı bel fıtığı ameliyatı ve endoskopik omurga cerrahisi: hızlı iyileşme, minimal kesi.",
   },
   hakkimizda: {
-    title: "Op. Dr. Eyüp Baykara Kimdir? | Beyin ve Sinir Cerrahisi",
+    title: "Eyüp Baykara Kimdir? | Op. Dr. Eyüp Baykara",
     description:
-      "Op. Dr. Eyüp Baykara — full endoskopik bel, boyun fıtığı ve kanal darlığı cerrahisinde uzman beyin ve sinir cerrahı. Silivri / İstanbul.",
+      "Eyüp Baykara kimdir? Op. Dr. Eyüp Baykara — beyin ve sinir cerrahisi uzmanı. Kapalı bel fıtığı, boyun fıtığı ve kanal darlığı ameliyatı. Silivri Anadolu Hastanesi.",
     snippet:
-      "Beyin ve sinir cerrahisi uzmanı. Full endoskopik, minimal invaziv omurga cerrahisinde deneyimli.",
+      "Op. Dr. Eyüp Baykara: full endoskopik omurga cerrahisi uzmanı. Eğitim, klinik ve tedavi alanları.",
   },
   iletisim: {
-    title: "Randevu ve İletişim | Op. Dr. Eyüp Baykara",
+    title: "Op. Dr. Eyüp Baykara İletişim | Randevu",
     description:
-      "Endoskopik bel fıtığı randevusu: Özel Silivri Anadolu Hastanesi. Tel 0530 783 72 24 — WhatsApp veya e-posta ile ulaşın.",
+      "Op. Dr. Eyüp Baykara randevu ve iletişim: Özel Silivri Anadolu Hastanesi. Tel 0530 783 72 24 — WhatsApp veya form ile yazın. Ameliyat ücreti bilgisi için ulaşın.",
     snippet:
-      "Randevu ve sorularınız için telefon, WhatsApp veya e-posta ile bize ulaşabilirsiniz.",
+      "Randevu, ameliyat ücreti sorusu ve şikâyet/geri bildirim için telefon, WhatsApp veya form.",
   },
   hastaDeneyimleri: {
-    title: "Hasta Deneyimleri ve Yorumlar | Op. Dr. Eyüp Baykara",
+    title:
+      "Op. Dr. Eyüp Baykara Yorumları | Dr. Eyüp Baykara Yorumlar",
     description:
-      "Full endoskopik bel fıtığı ve kanal darlığı ameliyatı sonrası hasta videoları, Google yorumları ve gerçek iyileşme hikâyeleri.",
+      "Op. Dr. Eyüp Baykara yorumları ve hasta videoları. Dr. Eyüp Baykara yorumlar, Google değerlendirmeleri ve kapalı bel fıtığı ameliyatı sonrası gerçek deneyimler.",
     snippet:
-      "Ameliyat sonrası videolar ve gerçek hasta yorumları — iyileşme hikâyelerini yakından görün.",
+      "Eyüp Baykara yorumları: ameliyat sonrası videolar ve hasta hikâyeleri — gerçek deneyimleri izleyin.",
   },
   blog: {
-    title: "Bel Fıtığı ve Endoskopik Cerrahi Blog | Op. Dr. Eyüp Baykara",
+    title:
+      "Kapalı Bel Fıtığı Ameliyatı Blog | Op. Dr. Eyüp Baykara",
     description:
-      "Bel fıtığı, siyatik, boyun fıtığı ve kanal darlığı hakkında bilgilendirici yazılar. Full endoskopik omurga cerrahisi rehberi.",
+      "Kapalı bel fıtığı ameliyatı, Eyüp Baykara yorumları, ameliyat ücreti ve bel fıtığı rehberi. Op. Dr. Eyüp Baykara blog yazıları.",
     snippet:
-      "Omurga sağlığı, fıtık ve endoskopik cerrahi hakkında güncel yazılar.",
+      "Bel fıtığı, yorumlar, ameliyat ücreti ve endoskopik cerrahi hakkında güncel yazılar.",
   },
   hizmetler: {
-    title: "Endoskopik Omurga Tedavileri | Op. Dr. Eyüp Baykara",
+    title: "Kapalı Bel Fıtığı Ameliyatı | Tedaviler | Op. Dr. Eyüp Baykara",
     description:
-      "Full endoskopik bel fıtığı, boyun fıtığı ve kanal darlığı ameliyatı. Minimal invaziv omurga tedavileri — Silivri / İstanbul.",
+      "Kapalı bel fıtığı ameliyatı, boyun fıtığı ve kanal darlığı. Op. Dr. Eyüp Baykara ile endoskopik omurga tedavileri — Silivri / İstanbul.",
     snippet:
-      "Bel fıtığı, boyun fıtığı ve kanal darlığında full endoskopik tedavi seçenekleri.",
+      "Kapalı bel fıtığı ameliyatı ve full endoskopik tedavi seçenekleri.",
   },
   cerezler: {
     title: "Çerez Politikası | Op. Dr. Eyüp Baykara",
@@ -58,15 +63,19 @@ export const PAGE_SEO = {
 } as const satisfies Record<string, PageSeo>;
 
 export const SITE_KEYWORDS = [
+  "Op. Dr. Eyüp Baykara",
+  "Eyüp Baykara",
+  "dr eyüp baykara",
+  "Op. Dr. Eyüp Baykara yorumları",
+  "dr eyüp baykara yorumlar",
+  "eyüp baykara yorumlar",
+  "dr eyüp baykara ameliyat ücreti",
+  "kapalı bel fıtığı ameliyatı",
   "endoskopik bel ameliyatı",
   "kapalı bel ameliyatı",
-  "kapalı bel fıtığı ameliyatı",
+  "bel fıtığı ameliyatı",
+  "eyüp baykara şikayet",
   "kapalı boyun fıtığı ameliyatı",
   "kanal darlığı ameliyatı",
-  "full endoskopik bel fıtığı ameliyatı",
-  "bel fıtığı ameliyatı",
-  "boyun fıtığı ameliyatı",
-  "Op. Dr. Eyüp Baykara",
-  "endoskopik omurga cerrahisi",
   "Silivri beyin cerrahisi",
 ] as const;

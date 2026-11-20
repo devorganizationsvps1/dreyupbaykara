@@ -28,10 +28,8 @@ export default async function HastaDeneyimleriPage() {
   return (
     <main className="min-h-screen bg-[#f7f1e9]">
       <PageHero
-        title={content?.title || "Hasta Deneyimleri"}
-        description={
-          content?.excerpt || PAGE_SEO.hastaDeneyimleri.snippet
-        }
+        title="Op. Dr. Eyüp Baykara Yorumları"
+        description={PAGE_SEO.hastaDeneyimleri.snippet}
         breadcrumb={[
           { label: "Anasayfa", href: "/" },
           { label: "Hasta Deneyimleri", href: "/hasta-deneyimleri" },
