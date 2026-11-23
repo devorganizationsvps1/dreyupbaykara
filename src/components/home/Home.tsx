@@ -160,17 +160,21 @@ export default function Home({
       <section
         id="home"
         ref={wrapperRef}
-        // Mobilde `svh`: adres çubuğu kaydırırken gizlenince `dvh` değişir,
-        // bölüm boyu oynar ve kaydırma oranı sıçrar.
-        className="home-hero-timeline relative h-[280svh] bg-bg lg:h-[280vh]"
+        // Mobilde sabit birimler (`svh`/`lvh`): adres çubuğu kaydırırken gizlenince
+        // `dvh` değişir, bölüm boyu oynar ve kaydırma oranı sıçrar. Boy, sabit
+        // alanın (`lvh`) üstüne 180svh kaydırma payı.
+        className="home-hero-timeline relative h-[calc(180svh+100lvh)] bg-bg lg:h-[280vh]"
         aria-label="Ana sayfa bölümü"
       >
         {/*
-          Mobilde sabit alan da `svh`: `dvh` adres çubuğu gizlenirken her karede
+          Mobilde sabit alan `lvh`: `dvh` adres çubuğu gizlenirken her karede
           değişiyor, kartlar yeniden diziliyor ve 3B tuval yeniden boyutlanıyordu
-          (kaydırırken takılma). Altta açılan ince şerit zaten aynı renkte.
+          (kaydırırken takılma). `svh` ise çubuk gizlenince ekranı doldurmuyor,
+          omurga altta boş bir şeritle kesiliyordu. `lvh` hem sabit hem de çubuk
+          gizliyken tüm ekranı kaplar; çubuk açıkken alt kısmı ekran dışında kalır,
+          o yüzden kart aşağıda `svh` ile boyutlanıyor.
         */}
-        <div className="sticky top-0 h-svh w-full overflow-hidden bg-bg lg:h-dvh">
+        <div className="sticky top-0 h-lvh w-full overflow-hidden bg-bg lg:h-dvh">
           <div className="absolute inset-0 z-[1] bg-bg">
             <div
               className="pointer-events-none absolute inset-0"
@@ -248,7 +252,7 @@ export default function Home({
             // Kendi katmanında: solma/kayma her karede yeniden boyama yapmasın.
             // `home-hero-card`: destekleyen tarayıcıda solma/kaymayı CSS kaydırma
             // animasyonu yapar (globals.css); framer değerleri yedek.
-            className="home-hero-card pointer-events-none absolute inset-0 z-10 flex flex-col px-3 pb-3 pt-[6.75rem] will-change-[transform,opacity] lg:hidden"
+            className="home-hero-card pointer-events-none absolute inset-x-0 top-0 z-10 flex h-svh flex-col px-3 pb-3 pt-[6.75rem] will-change-[transform,opacity] lg:hidden"
           >
             <div className="flex min-h-0 flex-1 flex-col gap-2.5 rounded-[1.5rem] bg-[#fdfaf5] p-3 shadow-[0_14px_36px_rgba(15,23,42,0.08)]">
               <HomeDoctorCard hero={sections.hero} mobile />
